@@ -23,11 +23,11 @@ echo "DFU : atmega16u2 flash [$1]"
 ##################
 
 if [ $2 == "i" ]; then
-    FLASH=arduino_midi.hex
+    FLASH=UsbMIDI.hex
     echo "Installing image '$FLASH' ..."
-    sudo dfu-programmer atmega16u2 erase
-    sudo dfu-programmer atmega16u2 flash $FLASH
-    sudo dfu-programmer atmega16u2 reset
+    dfu-programmer atmega16u2 erase
+    dfu-programmer atmega16u2 flash $FLASH
+    dfu-programmer atmega16u2 reset
 
 ##################
 #### Restore #####
@@ -41,8 +41,8 @@ elif [ $2 == "r" ]; then
     fi
 
     echo "Restoring image '$FLASH' ..."
-    sudo dfu-programmer atmega16u2 erase
-    sudo dfu-programmer atmega16u2 flash $FLASH 
-    sudo dfu-programmer atmega16u2 reset
+    dfu-programmer atmega16u2 erase
+    dfu-programmer atmega16u2 flash $FLASH 
+    dfu-programmer atmega16u2 reset
 fi
 
