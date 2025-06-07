@@ -4,8 +4,7 @@
 # MIDI USB class compliant driver installation on atmega16u2 (AVRDUDE) #
 ########################################################################
 
-TOOLS="/Applications/Arduino.app/Contents/Java/hardware/tools/avr"
-
+TOOLS="/usr/local"
 
 #########################
 #### Check arguments ####
@@ -25,7 +24,7 @@ echo "AVR : atmega16u2 flash [$1]"
 if [ $2 == "i" ]; then
     FLASH=UsbMIDI.hex
     echo "Installing image '$FLASH' ..."
-    $TOOLS/bin/avrdude -C$TOOLS/etc/avrdude.conf -B1 -pm16u2 -cusbtiny -Pusb -Uflash:w:$FLASH -U lfuse:w:0xff:m -U hfuse:w:0xd9:m -U efuse:w:0xf4:m -U lock:w:0x0F:m
+    $TOOLS/bin/avrdude -C$TOOLS/etc/avrdude.conf -B1 -pm16u2 -cusbtiny -Pusb -Uflash:w:$FLASH -U lfuse:w:0xff:m -U hfuse:w:0xd9:m -U efuse:w:0xf4:m -U lock:w:0xCF:m
 
 ##################
 #### Restore #####

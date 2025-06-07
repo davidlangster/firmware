@@ -25,9 +25,9 @@ echo "DFU : atmega16u2 flash [$1]"
 if [ $2 == "i" ]; then
     FLASH=UsbMIDI.hex
     echo "Installing image '$FLASH' ..."
-    dfu-programmer atmega16u2 erase
-    dfu-programmer atmega16u2 flash $FLASH
-    dfu-programmer atmega16u2 reset
+    sudo dfu-programmer atmega16u2 erase
+    sudo dfu-programmer atmega16u2 flash $FLASH
+    sudo dfu-programmer atmega16u2 reset
 
 ##################
 #### Restore #####

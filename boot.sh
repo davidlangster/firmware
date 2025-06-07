@@ -28,6 +28,6 @@ elif [ $1 == "MEGA" ]; then
     $TOOLS/bin/avrdude -C/$TOOLS/etc/avrdude.conf -B1 -pm2560 -cusbtiny  -e -Ulock:w:0x3F:m -Uefuse:w:0xFD:m -Uhfuse:w:0xD8:m -Ulfuse:w:0xFF:m
     $TOOLS/bin/avrdude -C/$TOOLS/etc/avrdude.conf -B1 -pm2560 -cusbtiny  -Uflash:w:$ARDUINO/bootloaders/stk500v2/stk500boot_v2_mega2560.hex:i
     $TOOLS/bin/avrdude -C/$TOOLS/etc/avrdude.conf -B1 -pm2560 -cusbtiny  -Ulock:w:0x0F:m
-    $TOOLS/bin/avrdude -C/$TOOLS/etc/avrdude.conf -B1 -pm2560 -cusbtiny  -v 
+    ## $TOOLS/bin/avrdude -C/$TOOLS/etc/avrdude.conf -B1 -pm2560 -cusbtiny  
 fi
 
